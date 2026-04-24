@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="أداة زخرفة اسماء انجليزي و عربي للألعاب والتواصل الاجتماعي - فري فاير، ببجي، فيسبوك، انستا. إنشاء أسماء مزخرفة احترافية بسهولة">
+    <meta name="keywords" content="زخرفة اسماء, زخرفة انجليزي, زخرفة عربي, فري فاير, ببجي, فيسبوك, انستا, أسماء مزخرفة">
+    <meta name="author" content="zakhrafatasmaa">
+    <meta property="og:title" content="زخرفة اسماء انجليزي و عربي - فري فاير, ببجي, فيسبوك, انستا">
+    <meta property="og:description" content="أداة مجانية لإنشاء أسماء مزخرفة احترافية وجذابة">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zakhrafatasmaa.com/">
+    <title>زخرفة اسماء انجليزي و عربي | فري فاير, ببجي, فيسبوك, انستا</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #667eea;
+            --primary-dark: #5568d3;
+            --primary-light: #f0f4ff;
+            --accent-color: #f093fb;
+            --accent-color-2: #4facfe;
+            --text-dark: #1a202c;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --border-color: #e5e7eb;
+            --success-color: #10b981;
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+            background-color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-light) 0%, #fef3f8 100%);
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            animation: slideInUp 0.8s ease;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Tool Section */
+        .tool-section {
+            padding: 3rem 1rem;
+            background: white;
+        }
+
+        .tool-wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+        }
+
+        .tool-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            direction: rtl;
+            text-align: right;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        button {
+            flex: 1;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+            background: var(--bg-light);
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-light);
+        }
+
+        .styles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .style-btn {
+            padding: 0.5rem;
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            word-break: break-word;
+        }
+
+        .style-btn:hover {
+            border-color: var(--primary-color);
+            background: var(--primary-light);
+        }
+
+        .results-container {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .result-item {
+            background: white;
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.5rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+        }
+
+        .result-item:hover {
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .result-text {
+            flex: 1;
+            word-break: break-all;
+            font-size: 1.1rem;
+        }
+
+        .result-copy {
+            padding: 0.4rem 0.8rem;
+            background: var(--success-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .result-copy:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: 3rem 1rem;
+            background: white;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            font-weight: 700;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 1rem;
+        }
+
+        .subsection-title {
+            font-size: 1.4rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        article p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        article a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        article a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-right: 4px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-number {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-title {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .feature-description {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .faq-section {
+            margin-top: 2rem;
+        }
+
+        .faq-item {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            border-right: 3px solid var(--primary-color);
+        }
+
+        .faq-question {
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        /* Animations */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: slideInUp 0.6s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .header-container {
+                flex-direction: column-reverse;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .tool-wrapper {
+                padding: 1.5rem;
+            }
+
+            .styles-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .features-list {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .subsection-title {
+                font-size: 1.2rem;
+            }
+
+            input[type="text"], button {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero {
+                padding: 2rem 0.75rem;
+            }
+
+            .tool-wrapper {
+                padding: 1rem;
+            }
+
+            .button-group {
+                flex-direction: column-reverse;
+            }
+
+            nav ul {
+                gap: 0.75rem;
+                font-size: 0.8rem;
+            }
+
+            .result-text {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Copy notification */
+        .copy-notification {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--success-color);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 2000;
+        }
+
+        .copy-notification.show {
+            opacity: 1;
+        }
+
+        @media (max-width: 480px) {
+            .copy-notification {
+                bottom: 1rem;
+                right: 1rem;
+                left: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">✨ زخرفة الأسماء</div>
+            <nav>
+                <ul>
+                    <li><a href="#tool">الأداة</a></li>
+                    <li><a href="#features">المميزات</a></li>
+                    <li><a href="#faq">الأسئلة</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>زخرفة اسماء انجليزي و عربي</h1>
+            <p>الأسماء ليست مجرد كلمات عادية، بل هي هوية تعبر عن الشخص وشخصيته سواء في الحياة الواقعية أو في العالم الرقمي. اليوم، أصبح الجميع يبحث عن التميز والظهور بشكل مختلف، خاصة على منصات التواصل الاجتماعي والألعاب الإلكترونية. 
+            وهنا تظهر أهمية <a href="https://zakhrafatasmaa.com/" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">زخرفة اسماء فري فاير</a> وتطبيقاتها المتعددة. زخرفة اسماء تعني تحويل الاسم العادي إلى شكل مزخرف باستخدام رموز وخطوط مميزة وأشكال فريدة.</p>
+        </div>
+    </section>
+
+    <!-- Tool Section -->
+    <section class="tool-section" id="tool">
+        <div class="tool-wrapper">
+            <h2 class="tool-title">🎨 أداة زخرفة الأسماء</h2>
+            
+            <div class="input-group">
+                <label for="nameInput">أدخل اسمك (عربي أو إنجليزي):</label>
+                <input type="text" id="nameInput" placeholder="مثال: Ahmed أو أحمد" autocomplete="off">
+            </div>
+
+            <div class="button-group">
+                <button class="btn-primary" onclick="generateDecorations()">🎯 توليد الأسماء المزخرفة</button>
+                <button class="btn-secondary" onclick="clearAll()">🔄 مسح</button>
+            </div>
+
+            <div class="styles-grid" id="styleButtons">
+                <!-- Will be populated by JavaScript -->
+            </div>
+
+            <div class="results-container" id="resultsContainer">
+                <p style="text-align: center; color: var(--text-light);">أدخل اسماً وانقر على التوليد للحصول على نتائج مزخرفة</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="content-section">
+        <div class="container">
+            <article>
+                <!-- What is Name Decoration -->
+                <section>
+                    <h2 class="section-title">ما هي زخرفة اسماء؟</h2>
+                    <p>زخرفة اسماء هي عملية تحويل الأسماء العادية إلى أشكال مزخرفة باستخدام الرموز والخطوط الخاصة وحروف Unicode. الهدف منها هو إنشاء اسامي مزخرفه تبدو أكثر جاذبية وتميزاً على الإنترنت. سواء كنت تريد زخرفة اسماء عربي أو زخرفة اسماء انجليزي، فإن الفكرة الأساسية هي تحسين شكل الاسم بصرياً.</p>
+                    <p>تُستخدم هذه الطريقة بشكل كبير في الألعاب ومنصات التواصل الاجتماعي وحتى في العلامات التجارية. يوفر لك موقع زخرفة اسماء إمكانية إنشاء هذه الأشكال بسهولة دون الحاجة لإضافة الرموز يدوياً. يمكنك فقط إدخال الاسم والحصول على عشرات الخيارات الجاهزة، من البسيط إلى المعقد مثل زخرفة خط عربي.</p>
+                </section>
+
+                <!-- Features Section -->
+                <section id="features">
+                    <h2 class="section-title">أهم 10 مميزات أدوات زخرفة اسماء</h2>
+                    <div class="features-list">
+                        <div class="feature-card">
+                            <div class="feature-number">1</div>
+                            <div class="feature-title">إنشاء فوري للأسماء</div>
+                            <div class="feature-description">تقوم الأداة بتحويل الاسم العادي إلى شكل مزخرف خلال ثوانٍ، مما يوفر الوقت والجهد.</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-number">2</div>
+                            <div class="feature-title">تنوع الخطوط</div>
+                            <div class="feature-description">توفر العديد من خيارات زخرفة انجليزي وزخرفة عربي بأنماط مختلفة تناسب جميع الأذواق.</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-number">3</div>
+                            <div class="feature-title">إضافة الرموز</div>
+                            <div class="feature-description">يمكنك إدخال رموز وزخارف مختلفة لإنشاء اسم مزخرف فريد ومميز.</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-number">4</div>
+                            <div class="feature-title">سهولة النسخ واللصق</div>
+                            <div class="feature-description">يمكنك نسخ الاسم المزخرف بسهولة واستخدامه مباشرة على أي منصة.</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-number">5</div>
+                            <div class="feature-title">توافق مع المنصات</div>
+                            <div class="feature-description">تدعم الأدوات الاستخدام على فيسبوك، إنستقرام، ببجي، وفري فاير بدون مشاكل.</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-number">6</div>
+                            <div class="feature-title">دعم اللغتين</div>
+                            <div class="feature-description">تدعم زخرفة عربي وزخرفة انجليزي مما يجعلها مناسبة للجميع.</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-number">7</div>
+                            <div class="feature-title">واجهة سهلة الاستخدام</div>
+                            <div class="feature-description">لا تحتاج إلى خبرة، فقط اكتب الاسم واضغط على زر التوليد.</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-number">8</div>
+                            <div class="feature-title">خيارات غير محدودة</div>
+                            <div class="feature-description">يمكنك إنشاء عدد غير محدود من زخرفه اسماء المختلفة.</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-number">9</div>
+                            <div class="feature-title">متوافقة مع الجوال</div>
+                            <div class="feature-description">تعمل الأدوات بشكل ممتاز على الهواتف الذكية.</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-number">10</div>
+                            <div class="feature-title">مجانية بالكامل</div>
+                            <div class="feature-description">معظم مواقع زخرفة اسماء مجانية وتقدم خدمات قوية بدون تكلفة.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- How to Use -->
+                <section>
+                    <h2 class="section-title">كيفية استخدام أداة زخرفة اسماء</h2>
+                    <p>استخدام أداة زخرفة اسماء سهل جداً ولا يحتاج لأي خبرة. أولاً، قم بفتح الأداة أعلاه في موقعنا. ستجد مربع إدخال لكتابة الاسم. قم بكتابة الاسم الذي تريد زخرفته سواء بالعربي أو الإنجليزي. بعد ذلك اضغط على زر التوليد. خلال لحظات، ستظهر لك مجموعة من اسماء مزخرفه الجاهزة. اختر الشكل الذي يعجبك، ثم انسخه واستخدمه في حساباتك مثل فيسبوك أو إنستقرام أو في الألعاب. بعض الأدوات توفر إمكانية تخصيص الزخرفة للحصول على زخرفة عربية احترافية بشكل يدوي.</p>
+                </section>
+
+                <!-- PUBG Section -->
+                <section>
+                    <h2 class="section-title">زخرفة اسماء ببجي</h2>
+                    <p>في لعبة ببجي، الاسم المزخرف يعطي اللاعب هوية قوية ويجعله مميزاً بين الآخرين. تساعد زخرفة اسماء ببجي على إنشاء أسماء فريدة باستخدام رموز وخطوط مميزة. يفضل الكثير من اللاعبين استخدام أسماء تعبر عن القوة أو الغموض أو الاحتراف.</p>
+                    <p>بعض المستخدمين يستخدمون أنماط زخرفة اسماء فري فاير اسطورية أيضاً داخل ببجي للحصول على مظهر جذاب. من المهم اختيار اسم واضح ومقبول داخل اللعبة لتجنب أي مشاكل. باستخدام أداة الزخرفة، يمكنك إنشاء اسم مثالي يعكس شخصيتك في اللعبة.</p>
+                </section>
+
+                <!-- English Decoration Fonts -->
+                <section>
+                    <h2 class="section-title">خطوط زخرفة انجليزي أنيقة</h2>
+                    <p>تعتبر خطوط زخرفة انجليزي أنيقة من أكثر الأنماط استخداماً في الأسماء المزخرفة. توفر هذه الخطوط مظهراً عصرياً وجذاباً يناسب مختلف الاستخدامات. تشمل هذه الأنماط خطوطاً مزخرفة، مائلة، أو عريضة باستخدام رموز Unicode.</p>
+                    <p>يفضل الكثير من المستخدمين زخرفة اسماء انجليزي لأنها تعمل على جميع المنصات تقريباً. سواء للاستخدام الشخصي أو الاحترافي، تضيف هذه الخطوط لمسة جمالية رائعة. أدوات زخرفة انجليزي تساعدك على إنشاء هذه الأشكال بسهولة وسرعة.</p>
+                </section>
+
+                <!-- Instagram Names -->
+                <section>
+                    <h2 class="section-title">زخرفة اسماء انستا</h2>
+                    <p>إنستقرام يعتمد بشكل كبير على الشكل البصري، لذلك يلعب الاسم المزخرف دوراً مهماً في جذب الانتباه. تساعد زخرفة اسماء انستا المستخدمين على إنشاء أسماء مميزة وفريدة. مع وجود ملايين المستخدمين، يصبح التميز أمراً ضرورياً.</p>
+                    <p>يستخدم الكثير من المؤثرين زخرفة اسماء انستقرام لبناء هوية قوية. يمكن أن تشمل الزخرفة رموزاً، إيموجي، وخطوط أنيقة. باستخدام أداة مناسبة، يمكنك التأكد من أن الاسم يظهر بشكل صحيح على المنصة. سواء كنت تريد تصميماً بسيطاً أو معقداً، فإن زخرفة الأسماء تضيف لمسة احترافية لحسابك.</p>
+                </section>
+
+                <!-- Facebook Names -->
+                <section>
+                    <h2 class="section-title">زخرفة اسماء فيسبوك</h2>
+                    <p>يضع فيسبوك بعض القيود على الأسماء، لذلك من المهم استخدام زخرفة اسماء يقبلها الفيس بوك. تساعد أدوات زخرفة اسماء فيسبوك على إنشاء أسماء متوافقة وجذابة في نفس الوقت. غالباً ما تكون هذه الأسماء بسيطة لكنها أنيقة.</p>
+                    <p>يفضل البعض استخدام زخرفة عربي لإضفاء طابع تقليدي، بينما يفضل آخرون زخرفة انجليزي للمظهر العصري. الاسم المزخرف يجعل الحساب أكثر جاذبية ويساعد على التميز بين المستخدمين. باستخدام الأداة المناسبة، يمكنك إنشاء اسم جميل ومقبول بسهولة.</p>
+                </section>
+
+                <!-- FAQ Section -->
+                <section id="faq">
+                    <h2 class="section-title">الأسئلة الشائعة حول زخرفة اسماء</h2>
+                    <div class="faq-section">
+                        <div class="faq-item">
+                            <div class="faq-question">❓ ما هو أفضل موقع زخرفة اسماء؟</div>
+                            <div class="faq-answer">أفضل موقع هو الذي يوفر تنوعاً في الأشكال وسرعة في التوليد وتوافقاً مع جميع المنصات.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">💰 هل زخرفة اسماء مجانية؟</div>
+                            <div class="faq-answer">نعم، معظم الأدوات مجانية ولا تحتاج إلى تسجيل أو دفع أي مبلغ.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">🌐 هل يمكن استخدام الأسماء المزخرفة في كل المنصات؟</div>
+                            <div class="faq-answer">نعم، لكن يجب اختيار الأنماط المتوافقة مع كل منصة لضمان ظهورها بشكل صحيح.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">🔤 ما الفرق بين زخرفة عربي وزخرفة انجليزي؟</div>
+                            <div class="faq-answer">زخرفة عربي تعتمد على الخطوط العربية، بينما زخرفة انجليزي تعتمد على الحروف الإنجليزية والرموز.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">🎮 هل الأسماء المزخرفة آمنة في الألعاب؟</div>
+                            <div class="faq-answer">نعم، بشرط اختيار نمط مدعوم من اللعبة وعدم استخدام رموز محظورة.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">✏️ هل يمكن إنشاء اسم مزخرف مخصص؟</div>
+                            <div class="faq-answer">نعم، بعض الأدوات المتقدمة تسمح بالتخصيص الكامل وإضافة رموز حسب الرغبة.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Conclusion -->
+                <section>
+                    <h2 class="section-title">الخاتمة</h2>
+                    <p>أصبحت زخرفة اسماء جزءاً مهماً من الهوية الرقمية. سواء كنت تستخدمها في الألعاب أو مواقع التواصل الاجتماعي، فإنها تساعدك على التعبير عن نفسك بطريقة مميزة. من زخرفة اسماء عربية إلى زخرفة اسماء بالفرنسية والإنجليزية، الخيارات متعددة ولا حدود لها.</p>
+                    <p>توفر أدوات زخرفة خط عربي وخطوط حديثة إمكانية إنشاء أسماء بسهولة واحترافية. سواء كنت تريد زخرفة اسماء فري فاير بالعربي أو زخرفة اسماء فري فاير بالانجليزي أو أسماء إنستقرام مميزة، يمكنك تحقيق ذلك بسهولة. مع تطور العالم الرقمي، ستبقى كتابة مزخرفة من أكثر الاتجاهات انتشاراً. اختر الاسم المناسب، واجعله يعبر عن شخصيتك بأسلوب فريد.</p>
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 زخرفة الأسماء - أداة زخرفة اسماء مجانية 100%</p>
+            <p>جميع الحقوق محفوظة | مختص في زخرفة اسماء عربي وانجليزي</p>
+        </div>
+    </footer>
+
+    <!-- Copy Notification -->
+    <div class="copy-notification" id="copyNotification">✅ تم النسخ بنجاح!</div>
+
+    <!-- JavaScript -->
+    <script>
+        const decorationStyles = {
+            'ᴰᴱᶜ ᴺᴼᴿᴹᴬᴸ': (text) => text.split('').map(char => {
+                const superscript = {
+                    'a': 'ᴬ', 'b': 'ᴮ', 'c': 'ᶜ', 'd': 'ᴰ', 'e': 'ᴱ', 'f': 'ᶠ', 'g': 'ᴳ', 'h': 'ʰ',
+                    'i': 'ᴵ', 'j': 'ᴶ', 'k': 'ᴷ', 'l': 'ᴸ', 'm': 'ᴹ', 'n': 'ᴺ', 'o': 'ᴼ', 'p': 'ᴾ',
+                    'q': 'ᵒ', 'r': 'ᴿ', 's': 'ˢ', 't': 'ᵀ', 'u': 'ᵁ', 'v': 'ᵛ', 'w': 'ʷ', 'x': 'ˣ', 'y': 'ʸ', 'z': 'ᶻ',
+                    'A': 'ᴬ', 'B': 'ᴮ', 'C': 'ᶜ', 'D': 'ᴰ', 'E': 'ᴱ', 'F': 'ᶠ', 'G': 'ᴳ', 'H': 'ʰ',
+                    'I': 'ᴵ', 'J': 'ᴶ', 'K': 'ᴷ', 'L': 'ᴸ', 'M': 'ᴹ', 'N': 'ᴺ', 'O': 'ᴼ', 'P': 'ᴾ',
+                    'Q': 'ᵒ', 'R': 'ᴿ', 'S': 'ˢ', 'T': 'ᵀ', 'U': 'ᵁ', 'V': 'ᵛ', 'W': 'ʷ', 'X': 'ˣ', 'Y': 'ʸ', 'Z': 'ᶻ',
+                    '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹'
+                };
+                return superscript[char] || char;
+            }).join(''),
+            '𝑺𝒕𝒚𝒍𝒆 ℐ𝒕𝒂𝒍𝒊𝒄': (text) => text.split('').map(char => {
+                const italic = {
+                    'a': '𝒂', 'b': '𝒃', 'c': '𝒄', 'd': '𝒅', 'e': '𝒆', 'f': '𝒇', 'g': '𝒈', 'h': '𝒉',
+                    'i': '𝒊', 'j': '𝒋', 'k': '𝒌', 'l': '𝒍', 'm': '𝒎', 'n': '𝒏', 'o': '𝒐', 'p': '𝒑',
+                    'q': '𝒒', 'r': '𝒓', 's': '𝒔', 't': '𝒕', 'u': '𝒖', 'v': '𝒗', 'w': '𝒘', 'x': '𝒙', 'y': '𝒚', 'z': '𝒛',
+                    'A': '𝑨', 'B': '𝑩', 'C': '𝑪', 'D': '𝑫', 'E': '𝑬', 'F': '𝑭', 'G': '𝑮', 'H': '𝑯',
+                    'I': '𝑰', 'J': '𝑱', 'K': '𝑲', 'L': '𝑳', 'M': '𝑴', 'N': '𝑵', 'O': '𝑶', 'P': '𝑷',
+                    'Q': '𝑸', 'R': '𝑹', 'S': '𝑺', 'T': '𝑻', 'U': '𝑼', 'V': '𝑽', 'W': '𝑾', 'X': '𝑿', 'Y': '𝒀', 'Z': '𝒁'
+                };
+                return italic[char] || char;
+            }).join(''),
+            '𝑩𝒐𝒍𝒅 𝑩𝒓𝒊𝒆𝒇': (text) => text.split('').map(char => {
+                const bold = {
+                    'a': '𝒂', 'b': '𝒃', 'c': '𝒄', 'd': '𝒅', 'e': '𝒆', 'f': '𝒇', 'g': '𝒈', 'h': '𝒉',
+                    'i': '𝒊', 'j': '𝒋', 'k': '𝒌', 'l': '𝒍', 'm': '𝒎', 'n': '𝒏', 'o': '𝒐', 'p': '𝒑',
+                    'q': '𝒒', 'r': '𝒓', 's': '𝒔', 't': '𝒕', 'u': '𝒖', 'v': '𝒗', 'w': '𝒘', 'x': '𝒙', 'y': '𝒚', 'z': '𝒛',
+                    'A': '𝑨', 'B': '𝑩', 'C': '𝑪', 'D': '𝑫', 'E': '𝑬', 'F': '𝑭', 'G': '𝑮', 'H': '𝑯',
+                    'I': '𝑰', 'J': '𝑱', 'K': '𝑲', 'L': '𝑳', 'M': '𝑴', 'N': '𝑵', 'O': '𝑶', 'P': '𝑷'
+                };
+                return bold[char] || char;
+            }).join(''),
+            '█ █ █ ᴮʟᴼɔᴋ': (text) => text.split('').map(char => {
+                if (char === ' ') return ' ';
+                return char + '█';
+            }).join(' '),
+            '◆◇ ᴰɪᴬᴹᴼɴᴰ': (text) => '◆ ' + text.split('').join(' ◆ ') + ' ◇',
+            '★ ⭐ ˢᵀᴬᴿ': (text) => '⭐ ' + text + ' ★',
+            '~° . • ° ϻ ᴀɢɪ ° . • ° ~': (text) => text.split('').map(char => {
+                const magic = {
+                    'a': 'α', 'e': 'ε', 'o': 'ο', 'i': 'ι', 'u': 'υ'
+                };
+                return magic[char] || char;
+            }).join(''),
+            '「 」 ʙᴏʀᴅᴇʀ': (text) => '「 ' + text + ' 」',
+            '░▒▓ ɢʀᴀᴅɪᴇɴᴛ': (text) => '▓▒░ ' + text + ' ░▒▓',
+            '❤ ᴰᴱᶜᴼ ❤': (text) => '❤ ' + text + ' ❤',
+            '✨ ✨ ˢʰɪɴᴱ ✨': (text) => '✨ ' + text + ' ✨'
+        };
+
+        function generateDecorations() {
+            const nameInput = document.getElementById('nameInput').value.trim();
+            const resultsContainer = document.getElementById('resultsContainer');
+
+            if (!nameInput) {
+                resultsContainer.innerHTML = '<p style="text-align: center; color: var(--text-light);">⚠️ الرجاء إدخال اسم أولاً</p>';
+                return;
+            }
+
+            let results = '<div style="display: grid; gap: 0.5rem;">';
+
+            Object.entries(decorationStyles).forEach(([styleName, styleFunc]) => {
+                const decorated = styleFunc(nameInput);
+                results += `
+                    <div class="result-item">
+                        <div class="result-text">${decorated}</div>
+                        <button class="result-copy" onclick="copyToClipboard('${decorated.replace(/'/g, "\\'")}')">نسخ</button>
+                    </div>
+                `;
+            });
+
+            results += '</div>';
+            resultsContainer.innerHTML = results;
+        }
+
+        function clearAll() {
+            document.getElementById('nameInput').value = '';
+            document.getElementById('resultsContainer').innerHTML = '<p style="text-align: center; color: var(--text-light);">أدخل اسماً وانقر على التوليد للحصول على نتائج مزخرفة</p>';
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                const notification = document.getElementById('copyNotification');
+                notification.classList.add('show');
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 2000);
+            }).catch(() => {
+                alert('فشل النسخ، حاول مجدداً');
+            });
+        }
+
+        // Enter key support
+        document.getElementById('nameInput').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                generateDecorations();
+            }
+        });
+
+        // Initialize style buttons
+        window.addEventListener('load', function() {
+            const styleButtons = document.getElementById('styleButtons');
+            Object.keys(decorationStyles).forEach((styleName, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'style-btn';
+                btn.textContent = styleName;
+                btn.onclick = () => {
+                    const input = document.getElementById('nameInput').value.trim();
+                    if (input) {
+                        const decorated = decorationStyles[styleName](input);
+                        copyToClipboard(decorated);
+                    }
+                };
+                styleButtons.appendChild(btn);
+            });
+        });
+    </script>
+</body>
+</html>
